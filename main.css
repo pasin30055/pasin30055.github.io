@@ -1,0 +1,79 @@
+html { 
+  font-family: "Arial" 
+}
+
+div.allmain {
+    width: 900px;
+    float: center;
+    margin: auto;
+}
+
+div.photo {
+    margin-top: 40px;
+    width: 200px;
+    height: 200px;
+    background-image: url('pasin.png');
+    float: right;
+}
+
+div.main {
+    top: 20px;
+    width: 700px;
+    font-size: 16;
+    margin: auto;
+    float: left;
+}
+
+a:visited {
+    text-decoration: none;
+    color: purple;
+}
+
+a:link {
+    text-decoration: none;
+    color: purple;
+}
+
+a:hover {
+    text-decoration: none;
+    color: green;
+}
+
+.pt {
+    font-weight: bold;
+    color: #009933;
+}
+
+.pa {
+    color: #663300;
+}
+
+.pc {
+    font-style: italic;
+}
+
+.po {
+    color: #404040;
+}
+
+.papername {
+    font-weight: bold;
+    font-size: 18;
+}
+
+.people {
+    font-style: italic;
+    font-size: 16;
+}
+
+.award {
+    font-weight: bold;
+    color: #000000;
+    font-style: italic;
+}
+
+.award:visited {
+    font-weight: bold;
+    color: #000000;
+    font-style: italic;
+}
