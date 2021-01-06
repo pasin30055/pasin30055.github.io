@@ -3,7 +3,7 @@ html {
 }
 
 div.allmain {
-    width: 900px;
+    width: 950px;
     float: center;
     margin: auto;
 }
@@ -18,7 +18,7 @@ div.photo {
 
 div.main {
     top: 20px;
-    width: 700px;
+    width: 750px;
     font-size: 16;
     margin: auto;
     float: left;
