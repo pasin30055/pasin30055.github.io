@@ -1,0 +1,50 @@
+#cssmenu ul {
+  box-shadow: 0 0 8px;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  list-style-type: none;
+  width: 100%;
+  position: relative;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  background: #353535;
+  font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-bottom: 1px solid #353535;
+  zoom: 1;
+}
+#cssmenu ul:before {
+  content: '';
+  display: block;
+}
+#cssmenu ul:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+#cssmenu li {
+  display: block;
+  float: right;
+  margin: 0;
+  padding: 0 4px;
+}
+#cssmenu li a {
+  display: block;
+  float: right;
+  color: #999999;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 20px 7px 20px;
+  border-bottom: 3px solid transparent;
+}
+#cssmenu li a:hover {
+  color: #FFFFFF;
+  border-bottom: 3px solid #00b8fd;
+}
+#cssmenu li.active a {
+  display: inline;
+  border-bottom: 3px solid #00b8fd;
+  float: right;
+  margin: 0;
+}
