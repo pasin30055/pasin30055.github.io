@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--
+    Security Configuration:
+    - Strict Content Security Policy restricting scripts, connections, images, and fonts.
+    - X-Content-Type-Options and Referrer-Policy meta guards.
+    - TODO(security): Configure HTTP response headers (X-Frame-Options: DENY,
+      Content-Security-Policy: frame-ancestors 'none', Strict-Transport-Security)
+      via Cloudflare Pages `_headers` file on deployment.
+  -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://script.google.com https://script.googleusercontent.com; object-src 'none'; base-uri 'self'; form-action 'none';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+  <title>พญ. วิภาวี ปะนะมณฑา &amp; ดร. พศิน มนูรังษี (Yim &amp; Pasin) — การ์ดเชิญพิธีฉลองมงคลสมรส</title>
+  <meta name="description"
+    content="ขอเรียนเชิญท่านเพื่อเป็นเกียรติในพิธีฉลองมงคลสมรส ระหว่าง พญ. วิภาวี ปะนะมณฑา (Yim) และ ดร. พศิน มนูรังษี (Pasin) วันที่ 27 ก.พ. 2570 เวลา 11:09 น. ณ ห้อง Conrad Ballroom โรงแรม Conrad Bangkok" />
+
+  <!-- OpenGraph tags for rich link previews on LINE, WhatsApp, and iMessage -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="พญ. วิภาวี ปะนะมณฑา &amp; ดร. พศิน มนูรังษี (Yim &amp; Pasin)" />
+  <meta property="og:description"
+    content="พิธีฉลองมงคลสมรส • 27 ก.พ. 2570 เวลา 11:09 น. • ห้อง Conrad Ballroom โรงแรม Conrad Bangkok" />
+  <meta property="og:image" content="photos/web-1.jpg" />
+
+  <!-- Google Fonts: Prompt + Anuphan (Thai) & Cormorant Garamond + Plus Jakarta Sans (English) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600&amp;family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;family=Prompt:wght@300;400;500;600&amp;display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-blush: #fcf5f7;
+      --bg-blush-deep: #f6e7eb;
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --card-border: #eed7de;
+      --panel-soft: #fdf8f9;
+      --rose-primary: #a65869;
+      --rose-primary-hover: #8f4757;
+      --rose-muted: #c98d9a;
+      --rose-light: #f5e4e8;
+      --rose-border-strong: #dfb8c2;
+      --text-main: #3b2429;
+      --text-secondary: #684950;
+      --text-muted: #937179;
+      --success-bg: #f4faf6;
+      --success-border: #b8dcc6;
+      --success-text: #2d5a40;
+      --error-bg: #fdf2f4;
+      --error-border: #e5b4be;
+      --error-text: #8c2d3e;
+      --font-serif: 'Cormorant Garamond', 'Prompt', sans-serif;
+      --font-thai-serif: 'Prompt', 'Cormorant Garamond', sans-serif;
+      --font-sans: 'Anuphan', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      min-height: 100%;
+      background-color: var(--bg-blush);
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(238, 203, 212, 0.42) 0%, transparent 48%),
+        radial-gradient(circle at 85% 85%, rgba(235, 195, 206, 0.38) 0%, transparent 50%);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 14px;
+    }
+
+    /* Main Invitation Card Container */
+    .invitation-shell {
+      width: 100%;
+      max-width: 980px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      box-shadow:
+        0 18px 45px -15px rgba(138, 72, 86, 0.13),
+        0 4px 14px -4px rgba(138, 72, 86, 0.06);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr;
+      position: relative;
+    }
+
+    /* Subtle inner hairline frame */
+    .invitation-shell::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(223, 184, 194, 0.38);
+      border-radius: 18px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    @media (min-width: 860px) {
+      body {
+        min-height: 100vh;
+        padding: 22px 24px;
+      }
+
+      .invitation-shell {
+        grid-template-columns: 1.02fr 0.98fr;
+        align-items: stretch;
+      }
+    }
+
+    /* Left Column: Visuals & Event Info */
+    .visual-column {
+      padding: 24px 22px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(253, 246, 248, 0.72) 0%, rgba(255, 255, 255, 0.42) 100%);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    @media (min-width: 860px) {
+      .visual-column {
+        padding: 28px 30px 26px;
+        border-bottom: none;
+        border-right: 1px solid var(--card-border);
+        justify-content: space-between;
+      }
+    }
+
+    /* Top Header: Logo + Subtitle */
+    .brand-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .wedding-logo {
+      width: 88px;
+      height: 88px;
+      object-fit: contain;
+      margin-bottom: 5px;
+      filter: drop-shadow(0 2px 6px rgba(166, 88, 105, 0.08));
+    }
+
+    .eyebrow {
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      color: var(--rose-primary);
+      font-weight: 600;
+    }
+
+    /* Photo Crossfade Frame */
+    .photo-stage {
+      position: relative;
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 4 / 5;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--rose-light);
+      border: 1px solid var(--rose-border-strong);
+      box-shadow: 0 10px 24px -8px rgba(120, 56, 70, 0.18);
+      margin-bottom: 14px;
+      user-select: none;
+    }
+
+    @media (max-width: 859px) {
+      .photo-stage {
+        max-width: 260px;
+      }
+    }
+
+    .photo-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.025);
+      transition: opacity 1.1s ease-in-out, transform 4.2s ease-out;
+      will-change: opacity, transform;
+    }
+
+    .photo-slide.active {
+      opacity: 1;
+      transform: scale(1);
+      z-index: 1;
+    }
+
+    .photo-dots {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 7px;
+      z-index: 3;
+      background: rgba(59, 36, 41, 0.28);
+      backdrop-filter: blur(6px);
+      padding: 4px 9px;
+      border-radius: 999px;
+    }
+
+    .photo-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, 0.55);
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.25s ease;
+    }
+
+    .photo-dot.active {
+      width: 18px;
+      border-radius: 999px;
+      background: #ffffff;
+    }
+
+    /* Couple & Event Details */
+    .event-summary {
+      width: 100%;
+    }
+
+    .invite-warm-line {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      margin-bottom: 6px;
+    }
+
+    .couple-names {
+      font-family: var(--font-thai-serif);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--text-main);
+    }
+
+    .couple-name-line {
+      font-size: clamp(1.56rem, 3.8vw, 1.8rem);
+      font-weight: 500;
+      line-height: 1.28;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+
+    .couple-amp {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.28rem;
+      color: var(--rose-primary);
+      line-height: 1;
+      margin: 2px 0;
+    }
+
+    .couple-nicknames {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.24rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+      margin-bottom: 12px;
+    }
+
+    .event-meta-box {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .event-date-line {
+      font-size: 1.04rem;
+      font-weight: 600;
+      color: var(--text-main);
+      letter-spacing: 0.01em;
+    }
+
+    .event-venue-line {
+      font-size: 0.96rem;
+      color: var(--text-secondary);
+    }
+
+    .event-dress-line {
+      font-size: 0.88rem;
+      color: var(--rose-primary);
+      font-weight: 500;
+    }
+
+    /* Action Button: Google Maps */
+    .utility-actions {
+      display: flex;
+      justify-content: center;
+    }
+
+    .pill-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--rose-primary);
+      background: #ffffff;
+      border: 1px solid var(--rose-border-strong);
+      padding: 8px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .pill-link:hover {
+      background: var(--rose-light);
+      border-color: var(--rose-primary);
+      color: var(--rose-primary-hover);
+    }
+
+    /* Right Column: Personalized Greeting & RSVP */
+    .rsvp-column {
+      padding: 24px 22px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #ffffff;
+    }
+
+    @media (min-width: 860px) {
+      .rsvp-column {
+        padding: 32px 36px;
+      }
+    }
+
+    .rsvp-header {
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--rose-light);
+      padding-bottom: 14px;
+    }
+
+    .rsvp-badge {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--rose-primary);
+      background: var(--rose-light);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .guest-greeting {
+      font-family: var(--font-thai-serif);
+      font-size: 1.72rem;
+      font-weight: 500;
+      color: var(--text-main);
+      line-height: 1.32;
+    }
+
+    .invitation-note {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      margin-top: 6px;
+      line-height: 1.48;
+    }
+
+    /* Form Controls */
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 6px;
+      letter-spacing: 0.01em;
+    }
+
+    .label-optional {
+      font-weight: 400;
+      color: var(--text-muted);
+      font-size: 0.86rem;
+    }
+
+    /* Segmented Radio Buttons for Attendance ("Yes" / "No") */
+    .attendance-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .attendance-option {
+      position: relative;
+    }
+
+    .attendance-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .attendance-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 14px;
+      border: 1.5px solid var(--card-border);
+      border-radius: 12px;
+      background: var(--panel-soft);
+      font-size: 1.02rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.18s ease;
+      text-align: center;
+    }
+
+    .attendance-option input[type="radio"]:checked+.attendance-card {
+      border-color: var(--rose-primary);
+      background: var(--rose-light);
+      color: var(--text-main);
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(166, 88, 105, 0.12);
+    }
+
+    .attendance-option input[type="radio"]:focus-visible+.attendance-card {
+      outline: 2px solid var(--rose-primary);
+      outline-offset: 2px;
+    }
+
+    .input-control,
+    .select-control,
+    .textarea-control {
+      width: 100%;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      color: var(--text-main);
+      background: var(--panel-soft);
+      border: 1px solid var(--card-border);
+      border-radius: 11px;
+      padding: 11px 13px;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .input-control:focus,
+    .select-control:focus,
+    .textarea-control:focus {
+      outline: none;
+      border-color: var(--rose-primary);
+      background: #ffffff;
+    }
+
+    .textarea-control {
+      resize: vertical;
+      min-height: 68px;
+      max-height: 128px;
+    }
+
+    .btn-primary {
+      width: 100%;
+      border: none;
+      border-radius: 12px;
+      background: var(--rose-primary);
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 1.02rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      padding: 13px 18px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.1s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: var(--rose-primary-hover);
+    }
+
+    .btn-primary:active:not(:disabled) {
+      transform: translateY(1px);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--rose-border-strong);
+      background: #ffffff;
+      color: var(--rose-primary);
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 9px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--rose-light);
+    }
+
+    /* Status & Feedback Banners */
+    .status-card {
+      background: var(--panel-soft);
+      border: 1px solid var(--rose-border-strong);
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+    }
+
+    .status-card.confirmed {
+      background: var(--success-bg);
+      border-color: var(--success-border);
+      color: var(--success-text);
+    }
+
+    .status-title {
+      font-weight: 600;
+      font-size: 1.06rem;
+      margin-bottom: 6px;
+    }
+
+    .status-detail {
+      font-size: 0.96rem;
+      color: var(--text-secondary);
+      line-height: 1.48;
+      margin-bottom: 12px;
+    }
+
+    .error-banner {
+      background: var(--error-bg);
+      border: 1px solid var(--error-border);
+      color: var(--error-text);
+      font-size: 0.92rem;
+      border-radius: 10px;
+      padding: 10px 13px;
+      margin-bottom: 12px;
+    }
+
+    /* Loading Skeleton */
+    .loading-box {
+      padding: 28px 12px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    .spinner {
+      width: 24px;
+      height: 24px;
+      border: 2.5px solid var(--rose-light);
+      border-top-color: var(--rose-primary);
+      border-radius: 50%;
+      animation: spin 0.75s linear infinite;
+      margin: 0 auto 10px;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="invitation-shell" id="invitationShell" aria-label="การ์ดเชิญพิธีฉลองมงคลสมรส">
+    <!-- Left / Top Section: Logo, Animated Photos, Couple & Venue Details -->
+    <section class="visual-column">
+      <div class="brand-header">
+        <img src="logo/logo-rose.png" alt="ตราสัญลักษณ์พิธีฉลองมงคลสมรส Yim &amp; Pasin" class="wedding-logo" width="96"
+          height="96" />
+        <span class="eyebrow">พิธีฉลองมงคลสมรส</span>
+      </div>
+
+      <!-- 4-Photo Crossfade Carousel -->
+      <div class="photo-stage" id="photoStage" aria-label="ภาพคู่บ่าวสาว">
+        <img src="photos/web-1.jpg" alt="ภาพคู่บ่าวสาว 1" class="photo-slide active" data-index="0" />
+        <img src="photos/web-2.jpg" alt="ภาพคู่บ่าวสาว 2" class="photo-slide" data-index="1" loading="lazy" />
+        <img src="photos/web-3.jpg" alt="ภาพคู่บ่าวสาว 3" class="photo-slide" data-index="2" loading="lazy" />
+        <img src="photos/web-4.jpg" alt="ภาพคู่บ่าวสาว 4" class="photo-slide" data-index="3" loading="lazy" />
+        <div class="photo-dots" role="tablist" aria-label="เลือกรูปภาพ">
+          <button type="button" class="photo-dot active" data-slide="0" aria-label="รูปที่ 1"></button>
+          <button type="button" class="photo-dot" data-slide="1" aria-label="รูปที่ 2"></button>
+          <button type="button" class="photo-dot" data-slide="2" aria-label="รูปที่ 3"></button>
+          <button type="button" class="photo-dot" data-slide="3" aria-label="รูปที่ 4"></button>
+        </div>
+      </div>
+
+      <div class="event-summary">
+        <p class="invite-warm-line">ขอเรียนเชิญท่านเพื่อเป็นเกียรติในพิธีฉลองมงคลสมรส ระหว่าง</p>
+        <h1 class="couple-names">
+          <span class="couple-name-line">พญ. วิภาวี ปะนะมณฑา</span>
+          <span class="couple-amp">&amp;</span>
+          <span class="couple-name-line">ดร. พศิน มนูรังษี</span>
+        </h1>
+        <p class="couple-nicknames">Yim &amp; Pasin</p>
+
+        <div class="event-meta-box">
+          <p class="event-date-line">27 ก.พ. 2570 &bull; เวลา 11:09 น.</p>
+          <p class="event-venue-line">ห้อง Conrad Ballroom โรงแรม Conrad Bangkok</p>
+          <p class="event-dress-line">Dress code: colors that make you smile</p>
+        </div>
+
+        <div class="utility-actions">
+          <a href="https://maps.app.goo.gl/LP3eSUoNZ66tRfgf6" target="_blank" rel="noopener noreferrer"
+            class="pill-link">
+            <span>&#x1F4CD;</span>
+            <span>แผนที่สถานที่จัดงาน</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right / Bottom Section: Personalized Greeting & State-Aware RSVP -->
+    <section class="rsvp-column" aria-live="polite">
+      <div class="rsvp-header">
+        <span class="rsvp-badge">การ์ดเชิญและตอบรับร่วมงาน</span>
+        <h2 class="guest-greeting" id="guestGreeting">เรียน แขกผู้มีเกียรติ</h2>
+        <p class="invitation-note" id="invitationSubnote">
+          ขอเรียนเชิญท่านเพื่อเป็นเกียรติในพิธีฉลองมงคลสมรส ระหว่าง พญ. วิภาวี ปะนะมณฑา และ ดร. พศิน มนูรังษี
+        </p>
+      </div>
+
+      <!-- Loading State -->
+      <div id="loadingState" class="loading-box hidden">
+        <div class="spinner" role="status" aria-hidden="true"></div>
+        <p>กำลังโหลดข้อมูลการ์ดเชิญของท่าน&hellip;</p>
+      </div>
+
+      <!-- Token Entry Gate (Shown when ?id= is missing or invalid) -->
+      <div id="tokenGatePanel" class="hidden">
+        <div id="tokenGateError" class="error-banner hidden"></div>
+        <form id="tokenLookupForm" novalidate>
+          <div class="form-group">
+            <label for="manualTokenInput" class="form-label">รหัสการ์ดเชิญ</label>
+            <input type="text" id="manualTokenInput" class="input-control" placeholder="กรอกรหัสเชิญ 8 หลักของท่าน"
+              maxlength="32" autocomplete="off" required />
+          </div>
+          <button type="submit" class="btn-primary">เปิดการ์ดเชิญ</button>
+        </form>
+      </div>
+
+      <!-- Prior / Recorded RSVP Summary State -->
+      <div id="existingRsvpPanel" class="status-card confirmed hidden">
+        <p class="status-title" id="existingRsvpTitle">บันทึกการตอบรับแล้ว</p>
+        <p class="status-detail" id="existingRsvpDetail"></p>
+        <button type="button" id="editRsvpBtn" class="btn-secondary">แก้ไขข้อมูลการตอบรับ</button>
+      </div>
+
+      <!-- Interactive RSVP Form -->
+      <form id="rsvpForm" class="hidden" novalidate>
+        <div id="formErrorBanner" class="error-banner hidden"></div>
+
+        <div class="form-group">
+          <span class="form-label">ท่านสะดวกเข้าร่วมงานหรือไม่?</span>
+          <div class="attendance-grid">
+            <label class="attendance-option">
+              <input type="radio" name="attending" value="YES" id="attendYes" checked />
+              <span class="attendance-card">สะดวกเข้าร่วม</span>
+            </label>
+            <label class="attendance-option">
+              <input type="radio" name="attending" value="NO" id="attendNo" />
+              <span class="attendance-card">ไม่สะดวกเข้าร่วม</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group" id="headcountGroup">
+          <label for="headcountSelect" class="form-label">จำนวนผู้เข้าร่วมงาน</label>
+          <select id="headcountSelect" class="select-control"></select>
+        </div>
+
+        <div class="form-group">
+          <label for="messageInput" class="form-label">
+            คำอวยพรถึงคู่บ่าวสาว <span class="label-optional">(Optional)</span>
+          </label>
+          <textarea id="messageInput" class="textarea-control" placeholder="เขียนคำอวยพรหรือข้อความถึง ยิ้ม&amp;พศิน..."
+            maxlength="600"></textarea>
+        </div>
+
+        <button type="submit" id="submitRsvpBtn" class="btn-primary">
+          ยืนยันการตอบรับ
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      "use strict";
+
+      /**
+       * ============================================================================
+       * CONFIGURATION
+       * Paste your deployed Google Apps Script Web App URL below once deployed:
+       * e.g., "https://script.google.com/macros/s/AKfycbx.../exec"
+       * ============================================================================
+       */
+      const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzu-M3AmCN8NSTV9VfmjfHcSL-vPqkqUx22BfTa_LFcFGXmAHMjf1ta1Okoeb2ytkfP/exec";
+
+      const TOKEN_REGEX = /^[A-Za-z0-9_-]{1,32}$/;
+
+      // In-memory application state (never persisted to localStorage/sessionStorage)
+      let currentGuest = {
+        guestId: "",
+        guestNames: "",
+        maxAllowed: 2,
+        attending: "",
+        headcount: 2,
+        message: ""
+      };
+
+      // DOM Elements
+      const slides = Array.from(document.querySelectorAll(".photo-slide"));
+      const dots = Array.from(document.querySelectorAll(".photo-dot"));
+      const photoStage = document.getElementById("photoStage");
+
+      const guestGreeting = document.getElementById("guestGreeting");
+      const invitationSubnote = document.getElementById("invitationSubnote");
+      const loadingState = document.getElementById("loadingState");
+      const tokenGatePanel = document.getElementById("tokenGatePanel");
+      const tokenGateError = document.getElementById("tokenGateError");
+      const tokenLookupForm = document.getElementById("tokenLookupForm");
+      const manualTokenInput = document.getElementById("manualTokenInput");
+
+      const existingRsvpPanel = document.getElementById("existingRsvpPanel");
+      const existingRsvpTitle = document.getElementById("existingRsvpTitle");
+      const existingRsvpDetail = document.getElementById("existingRsvpDetail");
+      const editRsvpBtn = document.getElementById("editRsvpBtn");
+
+      const rsvpForm = document.getElementById("rsvpForm");
+      const formErrorBanner = document.getElementById("formErrorBanner");
+      const attendYes = document.getElementById("attendYes");
+      const attendNo = document.getElementById("attendNo");
+      const headcountGroup = document.getElementById("headcountGroup");
+      const headcountSelect = document.getElementById("headcountSelect");
+      const messageInput = document.getElementById("messageInput");
+      const submitRsvpBtn = document.getElementById("submitRsvpBtn");
+
+      /**
+       * 1. Animated 4-Photo Crossfade Carousel
+       */
+      let activeSlideIndex = 0;
+      let slideIntervalId = null;
+
+      function showSlide(index) {
+        activeSlideIndex = (index + slides.length) % slides.length;
+        slides.forEach(function (slide, idx) {
+          slide.classList.toggle("active", idx === activeSlideIndex);
+        });
+        dots.forEach(function (dot, idx) {
+          dot.classList.toggle("active", idx === activeSlideIndex);
+        });
+      }
+
+      function startCarousel() {
+        stopCarousel();
+        slideIntervalId = window.setInterval(function () {
+          showSlide(activeSlideIndex + 1);
+        }, 4200);
+      }
+
+      function stopCarousel() {
+        if (slideIntervalId !== null) {
+          window.clearInterval(slideIntervalId);
+          slideIntervalId = null;
+        }
+      }
+
+      dots.forEach(function (dot) {
+        dot.addEventListener("click", function () {
+          const targetIdx = parseInt(dot.getAttribute("data-slide") || "0", 10);
+          showSlide(targetIdx);
+          startCarousel();
+        });
+      });
+
+      // Touch swipe support for mobile photo frame
+      let touchStartX = null;
+      photoStage.addEventListener("touchstart", function (e) {
+        if (e.touches && e.touches.length === 1) {
+          touchStartX = e.touches[0].clientX;
+        }
+      }, { passive: true });
+
+      photoStage.addEventListener("touchend", function (e) {
+        if (touchStartX === null || !e.changedTouches || e.changedTouches.length === 0) return;
+        const deltaX = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(deltaX) > 36) {
+          showSlide(deltaX < 0 ? activeSlideIndex + 1 : activeSlideIndex - 1);
+          startCarousel();
+        }
+        touchStartX = null;
+      }, { passive: true });
+
+      startCarousel();
+
+      /**
+       * 2. Safe DOM Helpers & Form State Logic
+       */
+      function populateHeadcountOptions(maxAllowed, selectedValue) {
+        headcountSelect.replaceChildren();
+        const safeMax = Math.min(20, Math.max(1, parseInt(maxAllowed, 10) || 1));
+        const targetVal = selectedValue && selectedValue >= 1 && selectedValue <= safeMax
+          ? selectedValue
+          : safeMax;
+
+        for (let i = 1; i <= safeMax; i++) {
+          const opt = document.createElement("option");
+          opt.value = String(i);
+          opt.textContent = String(i) + " ท่าน";
+          if (i === targetVal) {
+            opt.selected = true;
+          }
+          headcountSelect.appendChild(opt);
+        }
+      }
+
+      function syncAttendanceToggleUI() {
+        const isAttending = attendYes.checked;
+        headcountGroup.classList.toggle("hidden", !isAttending);
+        headcountSelect.disabled = !isAttending;
+      }
+
+      attendYes.addEventListener("change", syncAttendanceToggleUI);
+      attendNo.addEventListener("change", syncAttendanceToggleUI);
+
+      function showOnlyPanel(panelName) {
+        loadingState.classList.toggle("hidden", panelName !== "loading");
+        tokenGatePanel.classList.toggle("hidden", panelName !== "gate");
+        existingRsvpPanel.classList.toggle("hidden", panelName !== "existing");
+        rsvpForm.classList.toggle("hidden", panelName !== "form");
+      }
+
+      function renderTokenGate(errorMessage) {
+        guestGreeting.textContent = "เรียน แขกผู้มีเกียรติ";
+        invitationSubnote.textContent = "กรุณากรอกรหัสการ์ดเชิญจากลิงก์ที่ท่านได้รับเพื่อตอบรับการเข้าร่วมงานในพิธีฉลองมงคลสมรส";
+        if (errorMessage) {
+          tokenGateError.textContent = errorMessage;
+          tokenGateError.classList.remove("hidden");
+        } else {
+          tokenGateError.textContent = "";
+          tokenGateError.classList.add("hidden");
+        }
+        showOnlyPanel("gate");
+      }
+
+      function renderGuestView(guestData, showConfirmationTitle) {
+        currentGuest = {
+          guestId: (guestData.guestId || "").toString().trim(),
+          guestNames: (guestData.guestNames || "แขกผู้มีเกียรติ").toString().trim(),
+          maxAllowed: Math.min(20, Math.max(1, parseInt(guestData.maxAllowed, 10) || 1)),
+          attending: (guestData.attending || "").toString().trim().toUpperCase(),
+          headcount: guestData.headcount !== null && guestData.headcount !== undefined
+            ? parseInt(guestData.headcount, 10)
+            : null,
+          message: (guestData.message || "").toString()
+        };
+
+        guestGreeting.textContent = "เรียน " + currentGuest.guestNames;
+        invitationSubnote.textContent =
+          "ขอเรียนเชิญท่านเพื่อเป็นเกียรติในพิธีฉลองมงคลสมรส ระหว่าง พญ. วิภาวี ปะนะมณฑา และ ดร. พศิน มนูรังษี";
+
+        populateHeadcountOptions(currentGuest.maxAllowed, currentGuest.headcount || currentGuest.maxAllowed);
+        messageInput.value = currentGuest.message;
+
+        if (currentGuest.attending === "NO") {
+          attendNo.checked = true;
+        } else {
+          attendYes.checked = true;
+        }
+        syncAttendanceToggleUI();
+
+        if (currentGuest.attending === "YES" || currentGuest.attending === "NO") {
+          existingRsvpTitle.textContent = showConfirmationTitle
+            ? "ขอบพระคุณ — บันทึกการตอบรับของท่านเรียบร้อยแล้ว"
+            : "ข้อมูลการตอบรับของท่าน";
+
+          if (currentGuest.attending === "YES") {
+            const count = currentGuest.headcount || 1;
+            existingRsvpDetail.textContent = "ท่านได้ยืนยันเข้าร่วมงานจำนวน " + String(count) + " ท่าน";
+          } else {
+            existingRsvpDetail.textContent =
+              "ท่านได้แจ้งว่าไม่สะดวกเข้าร่วมงาน ขอบพระคุณสำหรับความปรารถนาดีที่มีให้เราทั้งสองคน";
+          }
+          showOnlyPanel("existing");
+        } else {
+          formErrorBanner.classList.add("hidden");
+          showOnlyPanel("form");
+        }
+      }
+
+      editRsvpBtn.addEventListener("click", function () {
+        formErrorBanner.classList.add("hidden");
+        showOnlyPanel("form");
+      });
+
+      /**
+       * 3. Backend API Integration (doGet & doPost)
+       */
+      function isBackendConfigured() {
+        return APPS_SCRIPT_URL.indexOf("https://script.google.com/macros/s/") === 0;
+      }
+
+      async function verifyInvitationToken(token) {
+        const cleaned = (token || "").trim();
+        if (!cleaned || !TOKEN_REGEX.test(cleaned)) {
+          renderTokenGate(cleaned ? "กรุณากรอกรหัสการ์ดเชิญให้ถูกต้อง" : "");
+          return;
+        }
+
+        if (!isBackendConfigured()) {
+          renderTokenGate("ระบบตอบรับกำลังอยู่ระหว่างการตั้งค่า กรุณาลองใหม่อีกครั้งในภายหลัง");
+          return;
+        }
+
+        showOnlyPanel("loading");
+        try {
+          const endpoint = new URL(APPS_SCRIPT_URL);
+          endpoint.searchParams.set("id", cleaned);
+          const response = await window.fetch(endpoint.toString(), {
+            method: "GET",
+            credentials: "omit"
+          });
+          const data = await response.json();
+          if (!data || data.authorized !== true) {
+            renderTokenGate((data && data.message) ? String(data.message) : "ไม่พบรหัสการ์ดเชิญนี้");
+            return;
+          }
+          renderGuestView(data, false);
+        } catch (err) {
+          renderTokenGate("ไม่สามารถเชื่อมต่อระบบได้ในขณะนี้ กรุณาลองใหม่อีกครั้ง");
+        }
+      }
+
+      tokenLookupForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const code = manualTokenInput.value.trim();
+        if (!code || !TOKEN_REGEX.test(code)) {
+          renderTokenGate("กรุณากรอกรหัสการ์ดเชิญให้ถูกต้อง");
+          return;
+        }
+        const nextUrl = new URL(window.location.href);
+        nextUrl.searchParams.set("id", code);
+        window.history.replaceState({}, "", nextUrl.toString());
+        verifyInvitationToken(code);
+      });
+
+      rsvpForm.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        formErrorBanner.classList.add("hidden");
+
+        const attending = attendNo.checked ? "NO" : "YES";
+        const headcount = attending === "YES" ? (parseInt(headcountSelect.value, 10) || 1) : 0;
+        const message = messageInput.value.trim().slice(0, 600);
+
+        if (!isBackendConfigured()) {
+          formErrorBanner.textContent = "ระบบตอบรับกำลังอยู่ระหว่างการตั้งค่า กรุณาลองใหม่อีกครั้งในภายหลัง";
+          formErrorBanner.classList.remove("hidden");
+          return;
+        }
+
+        submitRsvpBtn.disabled = true;
+        const originalText = submitRsvpBtn.textContent;
+        submitRsvpBtn.textContent = "กำลังบันทึกข้อมูล...";
+
+        try {
+          const response = await window.fetch(APPS_SCRIPT_URL, {
+            method: "POST",
+            credentials: "omit",
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify({
+              guestId: currentGuest.guestId,
+              attending: attending,
+              headcount: headcount,
+              message: message
+            })
+          });
+
+          const result = await response.json();
+          if (!result || result.success !== true) {
+            formErrorBanner.textContent = (result && result.error)
+              ? String(result.error)
+              : "ไม่สามารถบันทึกข้อมูลได้ กรุณาลองใหม่อีกครั้ง";
+            formErrorBanner.classList.remove("hidden");
+            return;
+          }
+
+          renderGuestView({
+            guestId: currentGuest.guestId,
+            guestNames: currentGuest.guestNames,
+            maxAllowed: currentGuest.maxAllowed,
+            attending: result.attending || attending,
+            headcount: result.headcount !== undefined ? result.headcount : headcount,
+            message: message
+          }, true);
+        } catch (err) {
+          formErrorBanner.textContent = "เกิดข้อผิดพลาดในการเชื่อมต่อ กรุณาลองใหม่อีกครั้ง";
+          formErrorBanner.classList.remove("hidden");
+        } finally {
+          submitRsvpBtn.disabled = false;
+          submitRsvpBtn.textContent = originalText;
+        }
+      });
+
+      /**
+       * 4. Initial Boot
+       */
+      function init() {
+        const params = new URLSearchParams(window.location.search);
+        const urlToken = (params.get("id") || "").trim();
+
+        if (!urlToken) {
+          renderTokenGate("");
+        } else {
+          verifyInvitationToken(urlToken);
+        }
+      }
+
+      init();
+    })();
+  </script>
+</body>
+
+</html>
