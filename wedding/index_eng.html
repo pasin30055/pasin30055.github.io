@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,23 +12,28 @@
       Content-Security-Policy: frame-ancestors 'none', Strict-Transport-Security)
       via Cloudflare Pages `_headers` file on deployment.
   -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://script.google.com https://script.googleusercontent.com; object-src 'none'; base-uri 'self'; form-action 'none';" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://script.google.com https://script.googleusercontent.com; object-src 'none'; base-uri 'self'; form-action 'none';" />
   <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
 
   <title>Vipawee Panamonta &amp; Pasin Manurangsi (Yim &amp; Pasin) — Wedding Invitation</title>
-  <meta name="description" content="Please join us to celebrate the wedding of Vipawee Panamonta (Yim) and Pasin Manurangsi (Pasin) on Saturday, February 27, 2027 at 11:09 AM at Conrad Ballroom, Conrad Bangkok." />
+  <meta name="description"
+    content="Please join us to celebrate the wedding of Vipawee Panamonta (Yim) and Pasin Manurangsi (Pasin) on Saturday, February 27, 2027 at 11:09 AM at Conrad Ballroom, Conrad Bangkok." />
 
   <!-- OpenGraph tags for rich link previews on LINE, WhatsApp, and iMessage -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Vipawee Panamonta &amp; Pasin Manurangsi (Yim &amp; Pasin)" />
-  <meta property="og:description" content="Wedding Celebration • Saturday, February 27, 2027 at 11:09 AM • Conrad Ballroom at Conrad Bangkok" />
+  <meta property="og:description"
+    content="Wedding Celebration • Saturday, February 27, 2027 at 11:09 AM • Conrad Ballroom at Conrad Bangkok" />
   <meta property="og:image" content="photos/web-1.jpg" />
 
   <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap"
+    rel="stylesheet" />
 
   <style>
     :root {
@@ -60,7 +66,8 @@
       padding: 0;
     }
 
-    html, body {
+    html,
+    body {
       min-height: 100%;
       background-color: var(--bg-blush);
       background-image:
@@ -112,6 +119,7 @@
         min-height: 100vh;
         padding: 22px 24px;
       }
+
       .invitation-shell {
         grid-template-columns: 1.02fr 0.98fr;
         align-items: stretch;
@@ -437,7 +445,7 @@
       text-align: center;
     }
 
-    .attendance-option input[type="radio"]:checked + .attendance-card {
+    .attendance-option input[type="radio"]:checked+.attendance-card {
       border-color: var(--rose-primary);
       background: var(--rose-light);
       color: var(--text-main);
@@ -445,7 +453,7 @@
       box-shadow: 0 2px 8px rgba(166, 88, 105, 0.12);
     }
 
-    .attendance-option input[type="radio"]:focus-visible + .attendance-card {
+    .attendance-option input[type="radio"]:focus-visible+.attendance-card {
       outline: 2px solid var(--rose-primary);
       outline-offset: 2px;
     }
@@ -584,7 +592,9 @@
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .hidden {
@@ -592,51 +602,26 @@
     }
   </style>
 </head>
+
 <body>
 
   <main class="invitation-shell" id="invitationShell" aria-label="Wedding Invitation Card">
     <!-- Left / Top Section: Logo, Animated Photos, Couple & Venue Details -->
     <section class="visual-column">
       <div class="brand-header">
-        <img
-          src="logo/logo-rose.png"
-          alt="Yim and Pasin Wedding Emblem"
-          class="wedding-logo"
-          width="96"
-          height="96"
-        />
+        <img src="logo/logo-rose.png" alt="Yim and Pasin Wedding Emblem" class="wedding-logo" width="96" height="96" />
         <span class="eyebrow">Wedding Celebration</span>
       </div>
 
       <!-- 4-Photo Crossfade Carousel -->
       <div class="photo-stage" id="photoStage" aria-label="Couple portraits">
-        <img
-          src="photos/web-1.jpg"
-          alt="Vipawee and Pasin portrait 1"
-          class="photo-slide active"
-          data-index="0"
-        />
-        <img
-          src="photos/web-2.jpg"
-          alt="Vipawee and Pasin portrait 2"
-          class="photo-slide"
-          data-index="1"
-          loading="lazy"
-        />
-        <img
-          src="photos/web-3.jpg"
-          alt="Vipawee and Pasin portrait 3"
-          class="photo-slide"
-          data-index="2"
-          loading="lazy"
-        />
-        <img
-          src="photos/web-4.jpg"
-          alt="Vipawee and Pasin portrait 4"
-          class="photo-slide"
-          data-index="3"
-          loading="lazy"
-        />
+        <img src="photos/web-1.jpg" alt="Vipawee and Pasin portrait 1" class="photo-slide active" data-index="0" />
+        <img src="photos/web-2.jpg" alt="Vipawee and Pasin portrait 2" class="photo-slide" data-index="1"
+          loading="lazy" />
+        <img src="photos/web-3.jpg" alt="Vipawee and Pasin portrait 3" class="photo-slide" data-index="2"
+          loading="lazy" />
+        <img src="photos/web-4.jpg" alt="Vipawee and Pasin portrait 4" class="photo-slide" data-index="3"
+          loading="lazy" />
         <div class="photo-dots" role="tablist" aria-label="Photo selector">
           <button type="button" class="photo-dot active" data-slide="0" aria-label="Photo 1"></button>
           <button type="button" class="photo-dot" data-slide="1" aria-label="Photo 2"></button>
@@ -661,12 +646,8 @@
         </div>
 
         <div class="utility-actions">
-          <a
-            href="https://maps.app.goo.gl/LP3eSUoNZ66tRfgf6"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="pill-link"
-          >
+          <a href="https://maps.app.goo.gl/LP3eSUoNZ66tRfgf6" target="_blank" rel="noopener noreferrer"
+            class="pill-link">
             <span>&#x1F4CD;</span>
             <span>Google Maps</span>
           </a>
@@ -680,7 +661,8 @@
         <span class="rsvp-badge">Personal Invitation</span>
         <h2 class="guest-greeting" id="guestGreeting">Dear Honored Guest,</h2>
         <p class="invitation-note" id="invitationSubnote">
-          Please join us to celebrate the wedding of Vipawee Panamonta and Pasin Manurangsi on Saturday, February 27, 2027 at 11:09 AM.
+          Please join us to celebrate the wedding of Vipawee Panamonta and Pasin Manurangsi on Saturday, February 27,
+          2027 at 11:09 AM.
         </p>
       </div>
 
@@ -696,15 +678,8 @@
         <form id="tokenLookupForm" novalidate>
           <div class="form-group">
             <label for="manualTokenInput" class="form-label">Invitation Code</label>
-            <input
-              type="text"
-              id="manualTokenInput"
-              class="input-control"
-              placeholder="Enter your 8-character code"
-              maxlength="32"
-              autocomplete="off"
-              required
-            />
+            <input type="text" id="manualTokenInput" class="input-control" placeholder="Enter your 8-character code"
+              maxlength="32" autocomplete="off" required />
           </div>
           <button type="submit" class="btn-primary">Open Invitation</button>
         </form>
@@ -744,12 +719,8 @@
           <label for="messageInput" class="form-label">
             Wishes or Note for the Couple <span class="label-optional">(Optional)</span>
           </label>
-          <textarea
-            id="messageInput"
-            class="textarea-control"
-            placeholder="Leave a short note for Yim &amp; Pasin..."
-            maxlength="600"
-          ></textarea>
+          <textarea id="messageInput" class="textarea-control" placeholder="Leave a short note for Yim &amp; Pasin..."
+            maxlength="600"></textarea>
         </div>
 
         <button type="submit" id="submitRsvpBtn" class="btn-primary">
@@ -770,7 +741,7 @@
        * e.g., "https://script.google.com/macros/s/AKfycbx.../exec"
        * ============================================================================
        */
-      const APPS_SCRIPT_URL = "";
+      const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzu-M3AmCN8NSTV9VfmjfHcSL-vPqkqUx22BfTa_LFcFGXmAHMjf1ta1Okoeb2ytkfP/exec";
 
       const TOKEN_REGEX = /^[A-Za-z0-9_-]{1,32}$/;
 
@@ -1098,4 +1069,5 @@
     })();
   </script>
 </body>
+
 </html>
