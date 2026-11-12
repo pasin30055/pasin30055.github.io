@@ -19,13 +19,13 @@
 
   <title>พญ. วิภาวี ปะนะมณฑา &amp; ดร. พศิน มนูรังษี (Yim &amp; Pasin) — การ์ดเชิญพิธีฉลองมงคลสมรส</title>
   <meta name="description"
-    content="ขอเรียนเชิญท่านเพื่อเป็นเกียรติในพิธีฉลองมงคลสมรส ระหว่าง พญ. วิภาวี ปะนะมณฑา (Yim) และ ดร. พศิน มนูรังษี (Pasin) วันที่ 27 ก.พ. 2570 เวลา 11:09 น. ณ ห้อง Conrad Ballroom โรงแรม Conrad Bangkok" />
+    content="ขอเรียนเชิญท่านเพื่อเป็นเกียรติในพิธีฉลองมงคลสมรส ระหว่าง พญ. วิภาวี ปะนะมณฑา (Yim) และ ดร. พศิน มนูรังษี (Pasin) วันที่ 27 ก.พ. 2570 เวลา 11:29 น. ณ ห้อง Conrad Ballroom โรงแรม Conrad Bangkok" />
 
   <!-- OpenGraph tags for rich link previews on LINE, WhatsApp, and iMessage -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="พญ. วิภาวี ปะนะมณฑา &amp; ดร. พศิน มนูรังษี (Yim &amp; Pasin)" />
   <meta property="og:description"
-    content="พิธีฉลองมงคลสมรส • 27 ก.พ. 2570 เวลา 11:09 น. • ห้อง Conrad Ballroom โรงแรม Conrad Bangkok" />
+    content="พิธีฉลองมงคลสมรส • 27 ก.พ. 2570 เวลา 11:29 น. • ห้อง Conrad Ballroom โรงแรม Conrad Bangkok" />
   <meta property="og:image" content="photos/web-1.jpg" />
 
   <!-- Google Fonts: Prompt + Anuphan (Thai) & Cormorant Garamond + Plus Jakarta Sans (English) -->
@@ -638,7 +638,7 @@
         <p class="couple-nicknames">Yim &amp; Pasin</p>
 
         <div class="event-meta-box">
-          <p class="event-date-line">27 ก.พ. 2570 &bull; เวลา 11:09 น.</p>
+          <p class="event-date-line">27 ก.พ. 2570 &bull; เวลา 11:29 น.</p>
           <p class="event-venue-line">ห้อง Conrad Ballroom โรงแรม Conrad Bangkok</p>
           <p class="event-dress-line">Dress code: colors that make you smile</p>
         </div>
@@ -738,7 +738,7 @@
        * e.g., "https://script.google.com/macros/s/AKfycbx.../exec"
        * ============================================================================
        */
-      const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzu-M3AmCN8NSTV9VfmjfHcSL-vPqkqUx22BfTa_LFcFGXmAHMjf1ta1Okoeb2ytkfP/exec";
+      const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxPP86eI13SIpIPhf5z5DftO1TSxP-9J0CX-Us959WgYM2G4TaRKc6lTrv5iLrBNpn_/exec";
 
       const TOKEN_REGEX = /^[A-Za-z0-9_-]{1,32}$/;
 
@@ -748,7 +748,7 @@
         guestNames: "",
         maxAllowed: 2,
         attending: "",
-        headcount: 2,
+        headcount: 1,
         message: ""
       };
 
@@ -842,10 +842,10 @@
        */
       function populateHeadcountOptions(maxAllowed, selectedValue) {
         headcountSelect.replaceChildren();
-        const safeMax = Math.min(20, Math.max(1, parseInt(maxAllowed, 10) || 1));
+        const safeMax = Math.min(20, Math.max(1, parseInt(maxAllowed, 10) || 2));
         const targetVal = selectedValue && selectedValue >= 1 && selectedValue <= safeMax
           ? selectedValue
-          : safeMax;
+          : 1;
 
         for (let i = 1; i <= safeMax; i++) {
           const opt = document.createElement("option");
@@ -891,7 +891,7 @@
         currentGuest = {
           guestId: (guestData.guestId || "").toString().trim(),
           guestNames: (guestData.guestNames || "แขกผู้มีเกียรติ").toString().trim(),
-          maxAllowed: Math.min(20, Math.max(1, parseInt(guestData.maxAllowed, 10) || 1)),
+          maxAllowed: Math.min(20, Math.max(1, parseInt(guestData.maxAllowed, 10) || 2)),
           attending: (guestData.attending || "").toString().trim().toUpperCase(),
           headcount: guestData.headcount !== null && guestData.headcount !== undefined
             ? parseInt(guestData.headcount, 10)
@@ -903,7 +903,7 @@
         invitationSubnote.textContent =
           "ขอเรียนเชิญท่านเพื่อเป็นเกียรติในพิธีฉลองมงคลสมรส ระหว่าง พญ. วิภาวี ปะนะมณฑา และ ดร. พศิน มนูรังษี";
 
-        populateHeadcountOptions(currentGuest.maxAllowed, currentGuest.headcount || currentGuest.maxAllowed);
+        populateHeadcountOptions(currentGuest.maxAllowed, currentGuest.headcount || 1);
         messageInput.value = currentGuest.message;
 
         if (currentGuest.attending === "NO") {
